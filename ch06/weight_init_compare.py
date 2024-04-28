@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from dataset.mnist import load_mnist
 from common.util import smooth_curve
 from common.multi_layer_net import MultiLayerNet
-from common.optimizer import SGD
+from common.optimizer import *
 
 
 # 0. MNIST 데이터 읽기==========
@@ -21,7 +21,8 @@ max_iterations = 2000
 
 # 1. 실험용 설정==========
 weight_init_types = {'std=0.01': 0.01, 'Xavier': 'sigmoid', 'He': 'relu'}
-optimizer = SGD(lr=0.01)
+# optimizer = SGD(lr=0.01)
+optimizer = Adam()
 
 networks = {}
 train_loss = {}
